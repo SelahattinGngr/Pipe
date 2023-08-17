@@ -1,0 +1,32 @@
+Pipe, isletim sistemlerinde iki process arasinda veri iletisimi saglayan bir iletisim mekanizmasidir.
+Bir islem tarafindan yazilan veri, diger islem tarafindan okunabilir.
+Pipe isletim sistemlerinin cesitli programlama dilleri ve araclarina dusuk seviyeli veri iletisimi saglamak icin kullanilir
+
+Pipe'lar genellikle ayni parrent process tarafindan olusturulan child process'ler arasinda veri iletisimi icin kullanilir,
+ancak ayni zamanda bircok farkli surec veya thread arasinda da kullanilabilirler.
+
+Pipe, temelde verilerin bir süreçten diğerine aktarılmasını sağlayan bir kanaldır.
+
+İki yönlü iletişim için çift yönlü (bidirectional) pipe kullanılabilirken, 
+tek yönlü (unidirectional) pipe yalnızca veri akışının bir yönde olmasını sağlar.
+
+Birçok işletim sistemi, Unix benzeri işletim sistemlerinde olduğu gibi, pipe'ları kullanarak işlemler arasında veri iletişimi sağlar.
+C dilinde, Unix benzeri sistemlerde pipe oluşturmak ve kullanmak için pipe() fonksiyonu kullanılır.
+Bu fonksiyon bir file descriptor dondurur, bunlar;
+    - yazma islemi icin : pipe[1]
+    - okuma islemi icin : pipe[0]
+
+!!!             TECRUBE ILE OGRENILEN NOT             !!!
+
+pipe[1] ile bir bir veri girdikten sonra o veriyi pipe[0] ile bir kere okuyabiliyoruz.
+    - kendi yaptigim calismada 1 main process pipe[1] e yazi yazdi
+    - bir child process 4 tane thread e ev sahipligi yapti
+    - 4 thread es zamanli calisarak pipe de bulunan yaziyi yazdirilmasi istendi
+    - 4 thread es zamanli calisti ama sadece 1 thread istenen ciktiyi verebildi
+																	15.08.2023
+
+17.08.2023
+    - cok arastirdim ama bulamadim ve kanaat getirdim
+    - pipe'i child process ile bir fonksiyon yardimi ile struct yapisinin icinde bir "char *" dizisinde tutup yazdirmak en mantiklisi
+    - kodu guncellemedim eski hatali halde birakacagim ki yaptigim hatayi bakan biri gorsun ders cikartsin
+                                                seviliyorsunuz :)
