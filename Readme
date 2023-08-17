@@ -17,13 +17,12 @@ Bu fonksiyon bir file descriptor dondurur, bunlar;
     - okuma islemi icin : pipe[0]
 
 !!!             TECRUBE ILE OGRENILEN NOT             !!!
-
+15.08.2023
 pipe[1] ile bir bir veri girdikten sonra o veriyi pipe[0] ile bir kere okuyabiliyoruz.
     - kendi yaptigim calismada 1 main process pipe[1] e yazi yazdi
     - bir child process 4 tane thread e ev sahipligi yapti
     - 4 thread es zamanli calisarak pipe de bulunan yaziyi yazdirilmasi istendi
     - 4 thread es zamanli calisti ama sadece 1 thread istenen ciktiyi verebildi
-																	15.08.2023
 
 17.08.2023
     - cok arastirdim ama bulamadim ve kanaat getirdim
